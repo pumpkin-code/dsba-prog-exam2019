@@ -1,0 +1,12 @@
+Caius Mueller	acc	fellow	Lila Haigh	Tue	Thu	Fri
+Aleah Walters	it	prog	Sumayya Munoz	Mon	Wed	Sat
+Maria Lane	it	prog	Sumayya Munoz	Tue	Thu	Sun
+Jeffery Amos	acc	head		Mon	Tue	Wed	Thu	Fri
+Chantal Shannon	acc	fellow	Lila Haigh	Mon	Wed	Sat
+Sumayya Munoz	it	head		Mon	Wed	Sat
+Usaamah Appleton	crm	fellow	Brendon Rangel	Mon	Tue	Wed
+Lila Haigh	acc	mngr	Jeffery Amos	Mon	Tue	Thu	Fri	Sat
+Asiyah Joseph	crm	head		Mon	Tue	Wed	Fri	Sat	Sun
+Reese Craft	office	head		Mon	Tue	Wed	Thu	Fri
+Brendon Rangel	crm	mngr	Asiyah Joseph	Mon	Tue	Wed	Thu	Fri	Sat	Sun
+Arjun Swan	crm	fellow	Asiyah Joseph	Thu	Sat	Sun
