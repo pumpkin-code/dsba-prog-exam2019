@@ -19,7 +19,7 @@
 
 
 
-//=========================[PART 1: up to 0.3]================================//
+//=========================[TASK 1: up to 0.35]===============================//
 
 
 
@@ -29,18 +29,18 @@
  * returns it.
  *
  * \param istr an input stream.
- * \return a collection of employees filled up with data readed from the given
+ * \return a collection of employees filled up with data read from a given
  * stream.
  *
- * A collection of employees is represented by a map of type NameEmployeeMap
+ * A collection of employees is represented by a map of NameEmployeeMap type
  * (see solut.h for the definition). Each record about employees is
  * represented by a single line (ended with '\n') and gets its corresponding
- * element in the map. The key of the map's element is the employee's name, the
+ * element in the map. The key of a map's element is an employee's name, the
  * value is an Employee object. Note, for an object
  *      Employee empl
  * its member field "name" (empl.name) is equal to the key.
  *
- * A given stream (highly likely is represented by a text file) provides one
+ * A given stream (highly likely represented by a text file) provides one
  * employee record per line. A line consists of:
  *  - employee's name (string)
  *  - department (string)
@@ -48,11 +48,11 @@
  *  - boss (string)
  *  - working days (sequence of strings)
  * All strings are limited in length and do not exceed 100 characters.
- * Attributes within single line are separated by tab character ('\t').
+ * The attributes within a single line are separated by tab characters ('\t').
  *
  * The empty line occurred in the stream means the input completion.
  *
- * Employee name and boss name strings can contains spaces.
+ * Employee name and boss name strings can contain spaces.
  *
  * Example:
  *      Caius Mueller→acc→fellow→Lila Haigh→Tue→Thu→Fri
@@ -79,12 +79,12 @@ NameEmployeeMap loadData(std::istream& istr)
 }
 
 
-//=========================[PART 2: up to 0.6]================================//
+//=========================[TASK 2: up to 0.65]===============================//
 
-// !! → Both following method must be provided as a single submission! ←
+// !! → Both following methods must be provided as a single submission! ←
 
 /*!
- * \brief Function makes a selection of epmployees distributed by departments.
+ * \brief function makes a selection of epmployees distributed by departments.
  *
  * \param team is a map of employees (e.g. created by loadData() function).
  * \return a collection of employees (names) distributed by deparments.
@@ -112,7 +112,7 @@ DepartEmplMap selectEmployeesInDepartents(const NameEmployeeMap& team)
  * \brief Function outputs information about employees distributed by
  * departments into a given stream.
  *
- * \param ostr is a stream for output to.
+ * \param ostr is a stream for outputting.
  * \param depList is a collection of employees (by their names) distributes by
  * departments. E.g., such a map can be obtained as a result of
  * selectEmployeesInDepartents() function.
@@ -123,19 +123,19 @@ DepartEmplMap selectEmployeesInDepartents(const NameEmployeeMap& team)
  * Function outputs a department name and then a set of employees working in
  * the department. Employees are output using the following rules:
  *  - the alphabetical order of employee names is used;
- *  - one employee per line preceding by a tab ('\t') character;
+ *  - one employee per line preceded by a tab ('\t') character;
  *  - the employee's name is succeded by the employee's position, separated by
- *    a comma with a space; then it follows a semicolon character with a space,
- *    and a number of working days with "w/d" suffix.
+ *    a comma with a space; then a semicolon character with a space, followed by
+ *    a number of working days with "w/d" suffix.
  *
  * Example:
  *
  * acc
- *         Caius Mueller, fellow; 3 w/d
- *         Chantal Shannon, fellow; 3 w/d
+ *    →    Caius Mueller, fellow; 3 w/d
+ *    →    Chantal Shannon, fellow; 3 w/d
  *   ...
  * office
- *         Reese Craft, head; 5 w/d
+ *    →    Reese Craft, head; 5 w/d
  *   ...
  *
  * Hint: use team to collect all necessary data about an employee.
@@ -147,12 +147,20 @@ void outputEmployeesInDepartents(std::ostream& ostr, const DepartEmplMap& depLis
 }
 
 
-//=========================[PART 3: up to 0.1]================================//
 
-// !! → Both following method must be provided as a single submission! ←
+
+
+
+
+//==========[TASK 3 OPTIONAL: up to 20 bonus points to OA grade]==============//
+
+// Warning: this part will be considered only the previous two parts are
+// solved completely!
+
+// !! → Both following methods must be provided as a single submission! ←
 
 /// Outputs a given set of strings, one string per line.
-/// Cost: »»»0.02«««
+/// Cost: »»»4 BP«««
 void outputStrSet(std::ostream& ostr, const StrSet& ss)
 {
     // TODO: provide an implementation here...
@@ -162,21 +170,13 @@ void outputStrSet(std::ostream& ostr, const StrSet& ss)
 /*!
  * \brief For a given Employee, finds all their direct and indirect subordinates.
  *
- * \param boss is an employee for which it is found subordinates.
+ * \param boss is an employee for subordinates are found.
  * \param team is a map of employees (e.g. created by loadData() function).
  *
- * Cost: »»»0.08«««
+ * Cost: »»»16 BP«««
  *
  * It is guaranteed that there is no circular dependencies.
- * If the employee does not have any subordinates, returns empty set.
- *
- * Function outputs a department name and then a set of employees working in
- * the department. Employees are output using the following rules:
- *  - the alphabetical order of employee names is used;
- *  - one employee per line preceding by a tab ('\t') character;
- *  - the employee's name is succeded by the employee's position, separated by
- *    a comma with a space; then it follows a semicolon character with a space,
- *    and a number of working days with "w/d" suffix.
+ * If an employee does not have any subordinates, returns empty set.
  *
  * Example:
  *      input: "Jeffery Amos"

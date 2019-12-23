@@ -15,15 +15,20 @@
 
 void test1()
 {
-    std::ifstream inpFile("../data/empl.txt");
+    std::ifstream inpFile("input.txt");
     NameEmployeeMap team = loadData(inpFile);
-
-    int a = 0;
+    for (const std::pair<std::string, Employee>& empl : team)
+    {
+        std::cout << empl.second.name << " " << empl.second.position << " "
+                  << empl.second.department << " " << empl.second.boss << " "
+                  << empl.second.workdays.size () << "\n";
+    }
 }
+
 
 void test2()
 {
-    std::ifstream inpFile("../data/empl.txt");
+    std::ifstream inpFile("input.txt");
     NameEmployeeMap team = loadData(inpFile);
 
     DepartEmplMap depList = selectEmployeesInDepartents(team);
@@ -31,19 +36,21 @@ void test2()
 }
 
 
-
 void test3()
 {
-    std::ifstream inpFile("../data/empl.txt");
+    std::ifstream inpFile("input-task3.txt");   // !!! note, the example file
+                                                // is input-task3.txt !!!
+    std::string boss;
+    std::getline(inpFile, boss);
     NameEmployeeMap team = loadData(inpFile);
-    StrSet subs1 = selectSubordinates("Jeffery Amos", team);
+
+    StrSet subs1 = selectSubordinates(boss, team);
     outputStrSet(std::cout, subs1);
 }
 
+
 int main()
 {
-    std::cout << "Hello world!\n\n";
-
     test1();
     test2();
     test3();

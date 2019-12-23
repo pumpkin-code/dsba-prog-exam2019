@@ -28,7 +28,7 @@ struct Employee {
     StrSet workdays;
 };
 
-/// Maps emplyees' names to employee objects. Used to represent a collection
+/// Maps employees' names to employee objects. Used to represent a collection
 /// of employees with a quick access by an employee's name.
 typedef std::map<std::string, Employee> NameEmployeeMap;
 
